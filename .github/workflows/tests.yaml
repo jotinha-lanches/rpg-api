@@ -1,0 +1,30 @@
+name: Automated Tests
+
+on: pull_request
+
+jobs:
+  jest:
+    name: Jest Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "lts/hydrogen"
+
+      - run: cd backend && npm ci
+
+      - name: Setting Environment variables and running tests
+        env:
+          NODE_ENV: development
+          POSTGRES_PASSWORD: local_password
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: local_user
+          POSTGRES_DB: local_db
+          DATABASE_URL: postgres://local_user:local_password@localhost:5432/local_db
+        run: cd backend && npm run test
+
+
+          

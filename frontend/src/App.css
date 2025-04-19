@@ -1,0 +1,449 @@
+/* ======= Layout Responsivo e Melhor Posicionamento ======= */
+.container-batalha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* ======= Controles Principais ======= */
+.controle-acao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* ======= Botões Estilizados ======= */
+button {
+    background: #8c6a45;
+    color: #f5e1a4;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+button:hover {
+    background: #a07c52;
+}
+
+.botao-grande {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+}
+
+/* ======= Ajuste de Tamanho para Botões de Ação ======= */
+.botao-acao {
+    width: 200px; /* Define um tamanho fixo para os botões de dano e cura */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ======= Modal de Gerenciamento ======= */
+/* ======= Modal Overlay (Fundo Escuro) ======= */
+.modal-overlay {
+    position: fixed;
+    /* Garante que fica sobre os outros elementos */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Fundo escuro para destaque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    /* Eleva o modal acima dos outros elementos */
+}
+
+/* ======= Caixa do Modal ======= */
+.modal {
+    background: #3a2c25;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    /* Adiciona uma sombra para destacar */
+    z-index: 1001;
+
+    max-width: 90vw;
+    /* Garante que o modal não fique muito largo */
+    max-height: 90vh;
+    /* Impede que o modal ultrapasse a tela */
+    overflow-y: auto;
+    /* Garante que o modal está acima da overlay */
+}
+
+/* ======= Botão Fechar ======= */
+.modal button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.modal h2 {
+    color: #e0c089;
+}
+
+.modal input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #b89d5e;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5e1a4;
+}
+
+/* ======= Organização de Botões de Turno ======= */
+.controle-turno {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ======= Organização da Lista de Personagens ======= */
+.lista-personagens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.personagem-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #b89d5e;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.personagem-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 0.9rem;
+}
+
+.personagem-nome {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.personagem-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.personagem-controles select {
+    padding: 5px;
+    border-radius: 5px;
+    background: #3a2c25;
+    color: #f5e1a4;
+    border: 1px solid #b89d5e;
+}
+
+.botao-excluir {
+    background: #b02e2e;
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-excluir:hover {
+    background: #d9534f;
+}
+
+.personagem-ativo {
+    background-color: #c49a6c !important;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+
+    .controle-acao,
+    .controle-turno {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .personagem-item {
+        width: 100%;
+    }
+}
+
+/* ======= Configuração Geral ======= */
+body {
+    font-family: "Cinzel", serif;
+    background-color: #2d221e;
+    /* Tom de marrom escuro */
+    color: #f5e1a4;
+    /* Bege */
+    margin: 0;
+    padding: 0;
+}
+
+/* ======= Adicionar Fundo de Textura ======= */
+body {
+    background-color: #2d221e;
+    background-repeat: repeat;
+}
+
+/* ======= Estilização de Títulos ======= */
+h1,
+h2 {
+    font-family: "Cinzel", serif;
+    color: #e0c089;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ======= Estilização do Colapse ======= */
+.colapse-container {
+    margin: 10px 0;
+}
+
+.colapse-botao {
+    background: #8c6a45;
+    color: #f5e1a4;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.colapse-conteudo {
+    margin-top: 5px;
+}
+
+/* ======= Scroll na Lista Dentro do Modal (Limitado para Celulares) ======= */
+.lista-scroll {
+    max-height: 200px;
+    /* Altura máxima no desktop */
+    overflow-y: auto;
+    /* Scroll vertical quando necessário */
+    border: 1px solid #b89d5e;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* ======= Melhor Estilização para os Personagens ======= */
+.personagem-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #b89d5e;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ======= Responsividade - Limite de Altura em Celulares ======= */
+/* ======= Responsividade - Evitar que o Formulário Saia da Tela ======= */
+@media (max-width: 90vw) {
+    .modal {
+        max-height: 50vh;
+        /* O modal ocupa no máximo 80% da altura da tela */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Garante espaço para o formulário */
+    }
+
+    .lista-scroll {
+        max-height: 35vh;
+        /* Ocupa no máximo 35% da tela, garantindo espaço para o formulário */
+    }
+}
+
+/* ======= Estilização da Tabela de Personagens ======= */
+.tabela-personagens {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ======= Cabeçalho da Tabela ======= */
+.tabela-header {
+    display: flex;
+    justify-content: space-between;
+    /* Garante espaçamento igual entre colunas */
+    width: 100%;
+    background: #8c6a45;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 600px;
+    /* Evita que o header fique menor que o conteúdo */
+}
+
+/* ======= Corpo da Tabela com Scroll ======= */
+.tabela-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 300px;
+    min-width: 600px;
+    /* Mantém a mesma largura do cabeçalho */
+}
+
+/* ======= Linhas da Tabela ======= */
+.tabela-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #b89d5e;
+    border-radius: 5px;
+    min-width: 600px;
+    /* Mantém alinhamento com o cabeçalho */
+}
+
+/* ======= Colunas Alinhadas ======= */
+.coluna-header,
+.coluna {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* ======= Evitar PV Separado em Duas Linhas ======= */
+.pv-coluna {
+    white-space: nowrap;
+    /* Mantém PV Atual e Máximo na mesma linha */
+}
+
+/* ======= Estilo para Personagens Mortos ======= */
+.tabela-linha.morto {
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid red;
+    color: red;
+}
+
+/* ======= Estilização do Multiselect ======= */
+.multiselect-condicoes {
+    width: 100%;
+    height: auto;
+    min-height: 80px; /* Altura mínima para visualizar múltiplos itens */
+    border: 2px solid #b89d5e;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5e1a4;
+    font-size: 1rem;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Ajuste para evitar que a seleção fique muito apertada */
+.multiselect-condicoes option {
+    background: #3a2c25;
+    color: #f5e1a4;
+    padding: 8px;
+}
+
+/* Quando a opção está selecionada */
+.multiselect-condicoes option:checked {
+    background: #8c6a45; /* Cor do fundo da opção selecionada */
+    color: #2d221e; /* Texto escuro para melhor contraste */
+    font-weight: bold;
+}
+
+/* Hover ao passar o mouse nas opções */
+.multiselect-condicoes option:hover {
+    background: #a07c52;
+    color: white;
+}
+
+/* ======= Estilização do Label ======= */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #e0c089;
+}
+
+/* ======= Melhorando a Responsividade ======= */
+@media (max-width: 768px) {
+    .multiselect-condicoes {
+        min-height: 100px; /* Aumenta um pouco a altura para facilitar toque no celular */
+        font-size: 0.9rem; /* Fonte um pouco menor para caber melhor */
+    }
+}
+
+/* ======= Grupo de Checkboxes ======= */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 1px solid #b89d5e;
+    margin-top: 10px;
+}
+
+/* ======= Estilização das Condições ======= */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #8c6a45;
+    color: #f5e1a4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .checkbox-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

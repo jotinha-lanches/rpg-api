@@ -1,35 +1,23 @@
-import swaggerAutogen from "swagger-autogen";
+const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0' });
 
 const doc = {
-  info: {
-    title: "RPG Battle API",
-    description: "API para gerenciar personagens e batalhas em RPG.",
-    version: "1.0.0",
-  },
-  host: "localhost:3333",
-  basePath: "/",
-  schemes: ["http"],
-  tags: [
-    {
-      name: "Batalha",
-      description: "Gerenciamento de personagens na batalha",
+    openapi: "3.0.0",
+    info: {
+        version: "1.0.0",
+        title: "API de Fichas D&D",
+        description: "API para cadastro e gerenciamento de fichas de personagens de D&D."
     },
-  ],
-  definitions: {
-    PersonagemBatalha: {
-      nome: "Aragorn",
-      pontosVida: 120,
-      iniciativa: 15,
-      classeArmadura: 18,
-      cdMagia: 12,
-      condicoes: ["ferido", "cansado"],
-    },
-  },
+    servers: [
+        {
+            url: 'http://localhost:3000',
+            description: "Servidor local"
+        }
+    ]
 };
 
-const outputFile = "./swagger-output.json";
-const routes = ["src/index.js", "./src/routes/**/*.js"];
+const outputFile = './swagger-output.json';
+const endpointsFiles = ['./index'];
 
-swaggerAutogen(outputFile, routes, doc).then(() => {
-  console.log("🚀 Swagger JSON gerado com sucesso!");
+swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+    require('./index'); // Ponto de entrada da aplicação
 });
