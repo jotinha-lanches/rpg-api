@@ -1,0 +1,5 @@
+{
+  "watch": ["."],
+  "ignore": ["swagger-output.json"],
+  "exec": "npm run swagger && node src/index.js"
+}
